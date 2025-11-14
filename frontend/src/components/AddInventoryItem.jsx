@@ -167,11 +167,11 @@ const handleSubmit = async (e) => {
     ...formData,
     variantCombination: formData.generatedVariants.map((v) => ({
       ...v,
-      price: Number(v.price) || 0,
+      price: Number(v.price) || 0,  
       stock: Number(v.stock) || 0,
-    })),
+    })),  
   };
-
+   
   try {
     const response = await fetch("http://localhost:5000/api/inventory/add", {
       method: "POST",
