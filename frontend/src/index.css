@@ -1,0 +1,18 @@
+/* src/index.css */
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: #111; }
+.app { max-width: 80%; margin: 18px auto; padding: 12px;}
+header h1 { margin: 0 0 12px 0; }
+.panel { background: #fff; padding: 12px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.product-list { list-style: none; padding: 0; margin: 0; }
+.product { display:flex; justify-content: space-between; align-items:center; padding: 8px 0; border-bottom: 1px solid #eee; }
+.product:last-child { border-bottom: none; }
+button { padding: 6px 10px; border: 1px solid #bbb; border-radius: 6px; background: #fff; cursor:pointer; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+.cart-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.cart-table th, .cart-table td { padding: 6px; border-bottom: 1px solid #eee; text-align:left; }
+.qty { padding: 0 8px; display:inline-block; min-width: 20px; text-align:center; }
+.totals {max-width: 88%; margin-top: 14px; text-align: right;}
+.totals div {margin: 10px 0px;}
+.empty { color: #555; padding: 12px 0; }
+.cart-actions { margin-top: 8px; display:flex; gap:8px; }
+footer { margin-top: 14px; text-align:center; color:#666; }
