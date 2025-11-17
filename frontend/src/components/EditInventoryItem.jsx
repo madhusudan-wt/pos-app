@@ -214,10 +214,13 @@ const EditInventoryItem = () => {
   const inputStyle = {
     width: "100%",
     padding: "8px",
-    margin: "5px 0",
+    margin: "5px 6px",
     borderRadius: "5px",
     border: "1px solid #ccc",
   };
+  const tdstyle= {
+    width: '30%'
+  }
   const containerStyle = {
     maxWidth: "750px",
     margin: "20px auto",
@@ -347,21 +350,31 @@ const EditInventoryItem = () => {
 
         {/* ✅ Variant Combinations */}
         {formData.variantCombination.length > 0 && (
+          
           <div style={{ marginTop: "20px" }}>
+           
             <h3>Variant Combinations</h3>
+            <table>
+              <thead>
+                <tr>
+                  <td>sku</td>
+                  <td>price</td>
+                  <td>stock</td>
+                  <td>action</td>
+                </tr>
+              </thead>
             {formData.variantCombination.map((combo, idx) => (
-             
-              <div
+             <tbody>
+              <tr
                 key={idx}
-                style={{
-                  display: "flex",
-                  gap: "10px",
-                  alignItems: "center",
-                  marginBottom: "8px",
-                }}
+                
               >
-                <span>{combo.combination}</span>
-                <label htmlFor="{combo.sku}" ></label>
+                 {
+              // console.log(combo)
+            }
+                {/* <span>{combo.combination}</span> */}
+                {/* <label htmlFor="{combo.sku}" ></label> */}
+                <td style={tdstyle}>
                 <input
                   type="text"
                   placeholder="SKU"
@@ -371,6 +384,9 @@ const EditInventoryItem = () => {
                   }
                   style={inputStyle}
                 />
+                </td>
+                <td style={tdstyle}>
+
                 <input
                   type="number"
                   placeholder="Price"
@@ -378,7 +394,11 @@ const EditInventoryItem = () => {
                   onChange={(e) =>
                     handleComboChange(idx, "price", e.target.value)
                   }
+                   style={inputStyle}
                 />
+                </td>
+                <td style={tdstyle}>
+
                 <input
                   type="number"
                   placeholder="Stock"
@@ -388,11 +408,18 @@ const EditInventoryItem = () => {
                   }
                   style={inputStyle}
                 />
+                </td>
+                <td  style={{width: "10%"}}>
+
                 <button type="button" onClick={() => removeCombination(idx)}>
                   <Trash2 size={16} />
                 </button>
-              </div>
+                </td>
+
+              </tr>
+              </tbody>
             ))}
+            </table>
           </div>
         )}
 
